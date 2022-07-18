@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  color: #707070;
+ background-color: #e5e5e5;
   line-height: 1.5;
   margin: 0;
   padding: 0;
@@ -26,8 +26,8 @@ img,
 iframe {
   max-width: 100%;
   display: block;
-  object-position: right;
-  object-fit: cover;
+  /* object-position: right;
+  object-fit: cover; */
 }
 
 figure {
@@ -51,29 +51,34 @@ h2 {
 }
 
 h3 {
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 600;
-  color: #121212;
+
   margin: 1.8rem 0;
 }
 
 h4 {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #fafafa;
+
   margin: 0;
 }
 
 a {
   text-decoration: none;
 }
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 /*-------------------- general styles section end------------- */
 
 /*------------utility classes section start------------------  */
 .container {
-  max-width: 120rem;
+  max-width: 144rem;
   margin: 0 auto;
-  width: 80%;
+  width: 60.4%;
 }
 
 .container-short {
@@ -88,19 +93,36 @@ a {
 }
 
 section {
-  margin-bottom: 10rem;
+  margin-bottom: 1.5rem;
 }
 
 .split {
   display: flex;
-  gap: 5rem;
+  gap: 1rem;
+}
+.split-center {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .split-between {
   display: flex;
-  /* gap: 5rem; */
   justify-content: space-between;
-  /* flex-wrap: wrap; */
+}
+.split-column {
+  display: flex;
+  flex-direction: column;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
 }
 
 .btn {
@@ -140,37 +162,81 @@ section {
   background-position: right;
   background-blend-mode: overlay;
 }
-/*--------------utility classes section end------------------ */
+/*============================
+utility classes section end
+=========================== */
 
+/*============================
+header section styles end
+=========================== */
 
+header {
+  background: #562eff;
+  color: #fff;
+}
+header img {
+  width: 6rem;
 
+  padding: 2.2rem 1rem;
 
+  transition: transform 0.5s ease-in-out;
+}
+header img:hover {
+  transform: scale(0.75);
+}
 
+li a {
+  color: #fff;
+  font-size: 1.6rem;
+  margin-left: 3.6rem;
+  display: inline-block;
+}
 
+/*============================
+header section styles end
+=========================== */
 
+/*============================
+Top-player-blog section styles start
+=========================== */
+.top-player-blog {
+  background: #fff;
+  margin: 1.5rem 0;
+  
+}
+.players {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+.players figure {
+  width: 30%;
+}
 
+hr{
+  width: 100%;
+  border: 1px solid #f35021;
+}
+.blogs{
+  padding: 2rem;
+}
+.blogs figure{
+  flex-basis: 50%;
+}
+.blog-details{
+  flex-basis: 50%;
+  padding: 1rem;
+}
 
+/*============================
+Top-player-blog section styles end
+=========================== */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.latest-course{
+  background-color: #fff;
+  padding: 2rem;
+}
 
 
 
@@ -334,3 +400,29 @@ input::placeholder {
 /*============================================= 
             Header section styles end
             =========================================*/
+@media screen and (max-width:600px){
+  .container{
+    width: 95%;
+  }
+  .header{
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  li a{
+    margin-left: 0;
+  }
+  .lists.split-center{
+    flex-direction: column;
+  }
+
+  .grid-3, .grid-2{
+    grid-template-columns: 1fr;
+    
+  }
+  .players figure{
+    flex-basis: 50%;
+    margin: 1.5rem;
+  }
+  
+}
